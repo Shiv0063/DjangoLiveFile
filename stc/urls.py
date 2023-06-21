@@ -24,6 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
 ]
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
 
 if settings.DEBUG:
     urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATICFILES_DIRS)
