@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
     <link rel="stylesheet" href="static/css/style.css">
+    {% for i in data %}
+    <link rel="stylesheet" href="{{i.file}}">
+    {% endfor %}
     
 </head>
 <body>

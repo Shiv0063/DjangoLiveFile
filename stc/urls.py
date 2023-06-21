@@ -23,9 +23,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home),
+    path('cf',views.cf),
+    path('d/<int:id>',views.delete),
 ]
 import mimetypes
 mimetypes.add_type("text/css", ".css", True)
 
 if settings.DEBUG:
+    urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
     urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATICFILES_DIRS)
